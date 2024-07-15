@@ -1,5 +1,13 @@
-<main class="main">
+<!-- HEADER -->
+<app-header [authorVisible]="authorVisible"></app-header>
+<!-- END HEADER-->
 
+<!-- CONTENT -->
+<main>
+    <router-outlet />
 </main>
+<!-- END CONTENT -->
 
-<router-outlet />
+<!-- FOOTER -->
+<app-footer (autorVisibleChangeEvent)="changeAutorVisible($event)" (resetSettingsEvent)="resetSettings()"></app-footer>
+<!-- END FOOTER -->

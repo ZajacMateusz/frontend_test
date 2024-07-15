@@ -1,0 +1,6 @@
+@import "../variables.scss";
+
+main {
+    padding-top: calc($header-height + $header-bottom-border);
+    min-height: calc(100vh - ($header-height + $header-bottom-border) - ($footer-height + $footer-top-border));
+}

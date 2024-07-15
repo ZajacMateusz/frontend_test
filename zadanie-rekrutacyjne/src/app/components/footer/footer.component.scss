@@ -1,0 +1,174 @@
+@import "../../../variables.scss";
+
+.footer {
+    height: $footer-height;
+    border-top: $footer-top-border solid darken($theme-footer-color, 20%);
+    background-color: $theme-footer-color;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $theme-footer-text-color;
+
+    @media only screen and (max-width: 768px) {
+        padding: 0 20px;
+        width: calc(100% - 40px);
+    }
+
+    @media only screen and (min-width: 768px) {
+        padding: 0 40px;
+        width: calc(100% - 80px);
+    }
+    
+    @media only screen and (min-width: 960px) {
+        padding: 0 60px;
+        width: calc(100% - 120px);
+        .header__title-block {
+            font-size: 2.5rem;
+        }
+    }
+
+
+    >div {
+        min-width: 280px;
+    }
+
+    >div:has(.footer__nabthat) {
+        display: none;
+
+        @media only screen and (min-width: 960px) {
+            display: block;
+        }
+    }
+
+   
+
+    .footer__css-awesome {
+        font-size: 28px;
+        line-height: 28px;
+        word-spacing: 10px;
+        padding: 10px;
+        width: 84px;
+        position: relative;
+        transition: color 0.5s ease-in-out;
+
+        .footer__css-awesome__border {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border: 2px solid $theme-footer-text-color;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 1.5s ease-in-out;
+        }
+
+        &:hover {
+            color: $theme-text-color;
+
+            .footer__css-awesome__border {
+                border-color: $theme-accent-color;
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .footer__nabthat {
+        width: 100%;
+        text-align: center;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        position: relative;
+
+        p {
+            width: min-content;
+            background-color: $theme-footer-color;
+            display: inline;
+            position: relative;
+            padding: 0 0.25rem;
+            z-index: 2;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 80%;
+            height: 1px;
+            top: 0;
+            left: 10%;
+            margin-top: 1rem;
+            background-color: $theme-footer-text-color;
+            z-index: 1;
+        }
+    }
+
+    .footer__menu-button {
+        border-color: $theme-footer-text-color;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+
+        svg {
+            transition: all 0.25s ease-in-out;
+        }
+
+        input[type="checkbox"] {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+
+        .footer__menu-button__menu {
+            width: 100%;
+            max-height: 0;
+            overflow-y: hidden;
+            background-color: $theme-text-color;
+            color: $theme-background-color;
+            bottom: calc($footer-height / 2);
+            margin-bottom: 25px;
+            left: 0;
+            position: absolute;
+            font-size: 1.25rem;
+            transition: all 0.5s ease-in-out;
+
+
+            > span {
+                text-align: left;
+                display: block;
+                margin: 2rem 1rem;
+
+                &:hover {
+                    color: $theme-accent-color;
+
+                    svg {
+                        fill: $theme-accent-color;
+                    }
+                }
+            }
+        }
+
+        &:has(input[type=checkbox]:checked) {
+            .footer__menu-button__menu {
+                max-height: 300px;
+                -webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 1);
+                -moz-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 1);
+                box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 1);
+            }
+
+            background: none;
+            border-color: $theme-text-color;
+            color: $theme-text-color;
+
+            >svg {
+                transform: rotate(180deg);
+            }
+        }
+
+        &:hover,
+        &:focus {
+            background: none;
+            border-color: $theme-text-color;
+        }
+    }
+}

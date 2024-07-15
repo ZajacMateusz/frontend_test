@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'zadanie-rekrutacyjne';
+  authorVisible : boolean = false;
+
+  changeAutorVisible(event: boolean) {
+    this.authorVisible = event;
+  }
+
+  resetSettings() {
+    window.location.reload();
+    localStorage.clear();
+  }
 }

@@ -1,0 +1,70 @@
+@import "../../../variables.scss";
+
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    height: $header-height;
+    background-color: $theme-header-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header__logo {
+        background-color: #303030;
+        font-size: 2rem;
+        height: 3.5em;
+        width: 3.5em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        transition: background-color 0.2s ease-in-out;
+
+        svg {
+            fill: $theme-text-color;
+            height: 70%;
+        }
+
+        &:hover {
+            background-color: $theme-accent-color;
+        }
+    }
+
+    .header__title-block {
+        font-size: 2rem;
+
+        p {
+            margin: 0;
+            width: 100%;
+            text-align: right;
+        }
+
+        .header__title-block--hidden {
+            display: none;
+        }
+
+        .header__title-block--bold {
+            font-weight: bold;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        padding: 0 20px;
+        width: calc(100% - 40px);
+    }
+
+    @media only screen and (min-width: 768px) {
+        padding: 0 40px;
+        width: calc(100% - 80px);
+    }
+    
+    @media only screen and (min-width: 960px) {
+        padding: 0 60px;
+        width: calc(100% - 120px);
+        .header__title-block {
+            font-size: 2.5rem;
+        }
+    }
+}

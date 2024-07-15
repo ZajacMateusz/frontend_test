@@ -1,0 +1,41 @@
+<div class="page">
+    <div class="content">
+
+        <!-- SECTION PAGE TITLE -->
+        <section class="content__page-title">
+            <h1>Nagłówek H1</h1>
+            <hr>
+        </section>
+        <!-- END SECTION PAGE TITLE -->
+
+        <!-- SECTION COLUMNS -->
+        <section class="content__columns">
+            <div>
+                <h2>blok pierwszy</h2>
+                <label>
+                    <input type="radio" name="option" value="1" (change)="changeLoadingOption(1)"> Opcja pierwsza
+                </label>
+                <label>
+                    <input type="radio" name="option" value="2" (change)="changeLoadingOption(2)"> Opcja druga
+                </label>
+                <label>
+                    <input type="radio" name="option" value="-1" (change)="changeLoadingOption(-1)"> Opcja losowa
+                </label>
+            </div>
+            <div>
+                <h2>blok drugi</h2>
+                <div class="content__columns--flex">
+                    <button type="button" class="content__columns__button" (click)="loadData()">Zastąp</button>
+                    <button type="button" class="content__columns__button" (click)="addData()">Doklej</button>
+                </div>
+            </div>
+            <div>
+                <h2>blok z długą nazwą, która sama się przytnie Sed ut perspiciatis unde omnis iste natus error sit
+                    voluptatem accusantium</h2>
+
+                <p *ngFor="let field of thirdBlockData"> ({{field.id}}) {{field.data}}</p>
+            </div>
+        </section>
+        <!-- END SECTION COLUMNS -->
+    </div>
+</div>
